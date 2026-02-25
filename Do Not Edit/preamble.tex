@@ -1,0 +1,121 @@
+% =====================================================
+% ===== Shared settings (BIO labs / worksheets) =====
+% =====================================================
+
+% ----- Page setup -----
+\usepackage[letterpaper,margin=0.55in]{geometry}
+
+% ----- Core layout & typography -----
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{ifthen}
+
+% ----- Color & links -----
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0}
+}
+
+% ----- Section formatting -----
+\usepackage{titlesec}
+
+% ----- Font handling -----
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[sfdefault]{carlito}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Georgia}
+\fi
+
+% ----- Header / footer -----
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% =====================================================
+% ===== Headings =====
+% =====================================================
+\definecolor{DeepBlue}{RGB}{0,40,90}
+
+\titleformat{\section}
+  {\Large\bfseries\color{DeepBlue}\raggedright}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{DeepBlue}\raggedright}
+  {}
+  {0pt}
+  {}
+  
+% ----- Section spacing control -----
+\titlespacing*{\section}
+  {0pt}      % left margin
+  {6pt}     % space before section
+  {6pt}      % space after section
+
+\titlespacing*{\subsection}
+  {0pt}
+  {24pt}
+  {4pt}
+% =====================================================
+% ===== Metadata =====
+% =====================================================
+\newcommand{\School}{KCTCS Somerset}
+\newcommand{\CourseCode}{BIO 150}
+\newcommand{\CourseTitle}{Principles of Biology I}
+\newcommand{\Modality}{In Person}
+\newcommand{\Instructor}{Justin N. Howard}
+
+\newcommand{\LabTitle}{Macromolecule Identification Lab}
+\newcommand{\Unit}{Biomolecules: Chemical Testing and Structure}
+\newcommand{\Semester}{Spring}
+\newcommand{\Year}{2026}
+\newcommand{\RenderBoldInput}[1]{\textbf{\input{#1}}}
+\usepackage{ifthen}
+
+
+
+% =====================================================
+% ===== Title block =====
+% =====================================================
+\newcommand{\MakeTitleBlock}{%
+  {\LARGE\bfseries \LabTitle}\par\vspace{6pt}
+  \hrule\vspace{6pt}
+  {\normalsize
+    \CourseCode{} · \CourseTitle{} · \Unit{}
+  }\par
+  {\normalsize
+    \Semester{} \Year{} · \School{} · Instructor: \Instructor{} · \Modality{}
+  }\par\vspace{18pt}
+}
+
+% =====================================================
+% ===== Footer =====
+% =====================================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyfoot[C]{%
+  \footnotesize
+  \School{} · \CourseCode{} · \Semester{} \Year{} —
+  Page \thepage\ of \pageref{LastPage}
+}
+
+% =====================================================
+% ===== Helpers =====
+% =====================================================
+\newcommand{\blank}[1]{\rule{#1}{0.4pt}}
